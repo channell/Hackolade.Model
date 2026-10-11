@@ -11,7 +11,7 @@ namespace Hackolade.Model;
 public abstract class BaseModel
 {
     [JsonPropertyName("GUID")]
-    public System.Guid? Guid { get; set; }
+    public System.Guid Guid { get; set; }
 
     [JsonExtensionData]
     public Dictionary<string, JsonElement>? AdditionalData { get; set; }

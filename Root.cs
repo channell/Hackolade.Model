@@ -1,5 +1,7 @@
 // ---------------------------------------------------------------------------------------
 //                                   Hackolade.Model
+//                        Copyright (c) 2026 Cepheis Ltd
+//                                    www.cepheis.com
 //
 // This file is part of Hiperspace and is distributed under the GPL Open Source License. 
 // ---------------------------------------------------------------------------------------
@@ -24,7 +26,7 @@ public sealed class Root
     public List<Entity>? Entities { get; set; }
 
     [JsonPropertyName("buckets")]
-    public List<Bucket>? Buckets { get; set; }
+    public List<RootBucket>? Buckets { get; set; }
 
     [JsonPropertyName("views")]
     public List<View>? Views { get; set; }
@@ -36,10 +38,10 @@ public sealed class Root
     public List<JsonElement>? Users { get; set; }
 
     [JsonPropertyName("diagramViews")]
-    public List<DiagramView>? DiagramViews { get; set; }
+    public List<RootDiagramView>? DiagramViews { get; set; }
 
     [JsonPropertyName("idToNameHashTable")]
-    public Dictionary<string, string>? IdToNameHashTable { get; set; }
+    public Dictionary<Guid, string>? IdToNameHashTable { get; set; }
 
     [JsonPropertyName("definitions")]
     public Definitions? Definitions { get; set; }
@@ -62,6 +64,34 @@ public sealed class Root
     [JsonPropertyName("businessGlossaryTerms")]
     public List<JsonElement>? BusinessGlossaryTerms { get; set; }
 
+    [JsonPropertyName("dbVendor")]
+    public string? DbVendor { get; set; }
+
+    [JsonPropertyName("appTarget")]
+    public string? AppTarget { get; set; }
+
+    [JsonPropertyName("creationTS")]
+    public string? CreationTS { get; set; }
+    [JsonPropertyName("lastModifTS")]
+    public string? LastModifTS { get; set; }
+
+    [JsonPropertyName("isLineageEnabled")]
+    public string? IsLineageEnabled { get; set; }
+
+    [JsonPropertyName("hackoladeMeta")]
+    public HackoladeMeta HackoladeMeta { get; set; } = new();
+
+    [JsonPropertyName("persistenceSchemaVersion")]
+    public string? PersistenceSchemaVersion { get; set; }
+
+    [JsonPropertyName("isCreatedByPlugin")]
+    public bool? IsCreatedByPlugin { get; set; }
+
+    [JsonPropertyName("pluginInformation")]
+    public PluginInformation? PluginInformation { get; set; }
+
+    [JsonPropertyName("settings")]
+    public Settings? Settings { get; set; }
     #endregion
 
     [JsonIgnore]

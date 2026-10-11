@@ -1,5 +1,7 @@
 // ---------------------------------------------------------------------------------------
 //                                   Hackolade.Model
+//                        Copyright (c) 2026 Cepheis Ltd
+//                                    www.cepheis.com
 //
 // This file is part of Hiperspace and is distributed under the GPL Open Source License. 
 // ---------------------------------------------------------------------------------------
@@ -18,6 +20,6 @@ public sealed class Definitions : BaseModel
     {
         Root = root;
         Properties?.ForEach(p => p.Link(root, null));
-        if (Guid is not null) root.Content.Add(Guid.Value, this);
+        root.Content.Add(Guid, this);
     }
 }

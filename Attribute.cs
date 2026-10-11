@@ -1,5 +1,7 @@
 // ---------------------------------------------------------------------------------------
 //                                   Hackolade.Model
+//                        Copyright (c) 2026 Cepheis Ltd
+//                                    www.cepheis.com
 //
 // This file is part of Hiperspace and is distributed under the GPL Open Source License. 
 // ---------------------------------------------------------------------------------------
@@ -24,6 +26,15 @@ public sealed class Attribute : BaseModel
     [JsonPropertyName("primaryKey")]
     public bool? PrimaryKey { get; set; }
 
+    [JsonPropertyName("compositePrimaryKey")]
+    public bool? CompositePrimaryKey { get; set; }
+
+    [JsonPropertyName("compositeUniqueKey")]
+    public bool? CompositeUniqueKey { get; set; }
+
+    [JsonPropertyName("alternateKey")]
+    public bool? AlternateKey { get; set; }
+
     [JsonPropertyName("compositeKey")]
     public List<String>? CompositeKey { get; set; }
 
@@ -40,10 +51,19 @@ public sealed class Attribute : BaseModel
     public string? RelationshipType { get; set; }
 
     [JsonPropertyName("parentRelationship")]
+
     public System.Guid? ParentRelationship { get; set; }
+    [JsonPropertyName("childRelationships")]
+    public List<System.Guid>? ChildRelationships { get; set; }
 
     [JsonPropertyName("isActivated")]
     public bool? IsActivated { get; set; } = true;
+
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
+
+    [JsonPropertyName("comments")]
+    public string? Comments { get; set; }
 
     [JsonIgnore]
     public Entity? Entity { get; set; }
@@ -71,6 +91,6 @@ public sealed class Attribute : BaseModel
     {
         Root = root;
         Entity = entity;
-        if (Guid is not null) root.Content.Add(Guid.Value, this);
+        root.Content.Add(Guid, this);
     }
 }

@@ -1,5 +1,7 @@
 ﻿// ---------------------------------------------------------------------------------------
 //                                   Hackolade.Model
+//                        Copyright (c) 2026 Cepheis Ltd
+//                                    www.cepheis.com
 //
 // This file is part of Hiperspace and is distributed under the GPL Open Source License. 
 // ---------------------------------------------------------------------------------------
@@ -35,6 +37,6 @@ public sealed class View : BaseModel
     public void Link(Root root)
     {
         Root = root;
-        if (Guid is not null) root.Content.Add(Guid.Value, this);
+        root.Content.Add(Guid, this);
     }
 }
