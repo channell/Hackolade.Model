@@ -11,7 +11,7 @@ namespace Hackolade.Model;
 
 public sealed class Relationship : BaseModel
 {
-    const string Link = "Link Relationship ";
+    const string LinkRelationship = "Link Relationship ";
 
     [JsonPropertyName("name")]
     public string? Name { get; set; }

@@ -13,10 +13,10 @@ namespace Hackolade.Model;
 
 public sealed class Entity : BaseModel
 {
-    const string Hub = "Hub Table ";
-    const string Satalite = "Satalite Table ";
-    const string Link = "Link Table ";
-    const string PIT = "Pit Table ";
+    const string HubTable = "Hub Table ";
+    const string SataliteTable = "Satalite Table ";
+    const string LinkTable = "Link Table ";
+    const string PitTable = "Pit Table ";
 
     [JsonPropertyName("collectionName")]
     public string? CollectionName { get; set; }
